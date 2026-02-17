@@ -1,0 +1,137 @@
+:root {
+  --bg: #0b1020;
+  --panel: #141d33;
+  --text: #f5f7ff;
+  --muted: #98a4c7;
+  --accent: #59d0ff;
+  --accent-strong: #2eb5eb;
+  --button: #2a3557;
+  --button-hover: #33426b;
+  --danger: #ff7a7a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1a2850, var(--bg) 55%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+.app {
+  width: min(95vw, 980px);
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.panel {
+  display: none;
+  background: color-mix(in srgb, var(--panel), transparent 20%);
+  border: 1px solid #2d3a61;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.panel.active {
+  display: block;
+}
+
+.menu-group {
+  margin: 1rem 0;
+}
+
+.menu-group p {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: 1px solid transparent;
+  background: var(--button);
+  color: var(--text);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--button-hover);
+  transform: translateY(-1px);
+}
+
+.btn.active,
+.btn.primary {
+  border-color: var(--accent);
+  background: #21486a;
+}
+
+.btn.start {
+  margin-top: 0.5rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  color: #072235;
+}
+
+.hud {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 800;
+}
+
+.divider {
+  color: var(--accent);
+  margin: 0 0.4rem;
+}
+
+#gameCanvas {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 9 / 5;
+  border: 3px solid #2b3b5e;
+  border-radius: 12px;
+  background: #050812;
+}
+
+.controls-note {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+#gameOverText {
+  font-size: 1.2rem;
+  color: var(--danger);
+}
+
+@media (max-width: 700px) {
+  .hud {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

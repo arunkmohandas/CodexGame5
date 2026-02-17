@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML5 Pong</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1 class="title">Pong Clone</h1>
+
+    <section id="menuScreen" class="panel active">
+      <h2>Main Menu</h2>
+      <div class="menu-group">
+        <p>Choose Game Mode</p>
+        <div class="button-row">
+          <button id="singlePlayerBtn" class="btn primary">Single Player</button>
+          <button id="twoPlayerBtn" class="btn">2 Player</button>
+        </div>
+      </div>
+
+      <div id="difficultyGroup" class="menu-group">
+        <p>AI Difficulty</p>
+        <div class="button-row">
+          <button data-difficulty="easy" class="btn difficulty active">Easy</button>
+          <button data-difficulty="medium" class="btn difficulty">Medium</button>
+          <button data-difficulty="hard" class="btn difficulty">Hard</button>
+        </div>
+      </div>
+
+      <button id="startGameBtn" class="btn start">Start Game</button>
+    </section>
+
+    <section id="gameScreen" class="panel">
+      <div class="hud">
+        <span id="leftScore">0</span>
+        <span class="divider">:</span>
+        <span id="rightScore">0</span>
+      </div>
+      <canvas id="gameCanvas" width="900" height="500" aria-label="Pong game area"></canvas>
+      <p class="controls-note">P1: W/S &nbsp;|&nbsp; P2: ↑/↓ (2 Player mode)</p>
+    </section>
+
+    <section id="gameOverScreen" class="panel">
+      <h2>Game Over</h2>
+      <p id="gameOverText">Player 1 wins!</p>
+      <div class="button-row">
+        <button id="playAgainBtn" class="btn primary">Play Again</button>
+        <button id="backToMenuBtn" class="btn">Back to Menu</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
